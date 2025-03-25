@@ -1,0 +1,10 @@
+PORT=3000
+
+# database setup
+# i got this to work by using a unique port, postgres as db name no matter what it is called
+# set user and password, and thats it.
+POSTGRES_PORT=5432
+POSTGRES_HOST=ep-jolly-sound-a8u9a5v9-pooler.eastus2.azure.neon.tech
+POSTGRES_DB=neondb
+POSTGRES_USER=neondb_owner
+POSTGRES_PASSWORD=npg_ow5Sl3JmFRMp

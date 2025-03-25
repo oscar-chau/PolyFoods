@@ -1,0 +1,62 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && nodemon dist/index.js",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "format": "prettier --write src/**/*.ts src/**/__tests__/*.ts",
+    "test": "npm run build && jasmine --random=false",
+    "lint": "eslint src/**/**/*.ts",
+    "resetDB": "tsc && node dist/database/initDB.js",
+    "hardTest": "npm run resetDB && npm run test",
+    "kill": "kill -9 $(lsof -t -i:3000)",
+    "pop": "npm run build && node dist/database/popDatabase.js",
+    "cov" : "nyc npm run hardTest"
+  },
+  "nyc": {
+    "include": ["dist/models/*.js"],
+    "exclude": ["dist/models/create*.js"],
+    "reporter": ["text", "html"],
+    "extension": [".ts"],
+    "require": ["ts-node/register"]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.0",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/cors": "^2.8.17",
+    "@types/jasmine": "^5.1.5",
+    "@types/morgan": "^1.9.9",
+    "@types/pg": "^8.11.10",
+    "@types/supertest": "^6.0.2",
+    "bcrypt": "^5.1.1",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
+    "jasmine": "^5.5.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "nyc": "^17.1.0",
+    "pg": "^8.13.1",
+    "supertest": "^7.0.0",
+    "typescript-eslint": "^8.20.0"
+  }
+}
