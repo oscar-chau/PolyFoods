@@ -1,5 +1,4 @@
-# CSC 309 Winter 2025
-Poly Meals LLC
+# Poly Meals LLC
 
 Glenn Anciado, Felix Tran, Oscar Chau, Louis Rocha, Nathan Martinez
 
